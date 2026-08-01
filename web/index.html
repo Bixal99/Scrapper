@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Scrapper — WithOne.AI Knowledge Scraper</title>
+    <meta
+      name="description"
+      content="Universal platform action scraper for the WithOne.AI knowledge base. Selenium crawl, clean Word exports."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="hero">
+      <nav class="nav">
+        <a class="brand" href="#top">Scrapper</a>
+        <div class="nav-links">
+          <a href="#flow">Flow</a>
+          <a href="#stack">Stack</a>
+          <a href="https://github.com/Bixal99/Scrapper" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </nav>
+
+      <div class="hero-copy" id="top">
+        <p class="eyebrow">WithOne.AI · Knowledge Base</p>
+        <h1>Scrapper</h1>
+        <p class="lede">
+          Paginated crawl, action detail extraction, and Word export —
+          one local Python script for every platform catalog.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="https://github.com/Bixal99/Scrapper" target="_blank" rel="noopener"
+            >View on GitHub</a
+          >
+          <a class="btn ghost" href="https://github.com/Bixal99/Scrapper#first-time-setup" target="_blank" rel="noopener"
+            >Setup guide</a
+          >
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="orbit">
+          <span class="chip c1">GET</span>
+          <span class="chip c2">POST</span>
+          <span class="chip c3">PUT</span>
+          <span class="chip c4">DELETE</span>
+        </div>
+        <pre class="terminal"><code>$ python scraper.py
+Opening GitHub knowledge page...
+Detected 12 pages
+[OK] 248 actions → Tools/github-tools.docx</code></pre>
+      </div>
+    </header>
+
+    <main>
+      <section class="strip" id="flow">
+        <h2>Core flow</h2>
+        <p class="section-lede">From knowledge page to formatted `.docx` — no polling, no manual copy.</p>
+        <ol class="steps">
+          <li><strong>Open</strong> the platform knowledge URL</li>
+          <li><strong>Walk</strong> every paginated action list</li>
+          <li><strong>Extract</strong> methods, endpoints, params &amp; samples</li>
+          <li><strong>Write</strong> `Tools/{platform}-tools.docx`</li>
+        </ol>
+      </section>
+
+      <section class="features">
+        <article>
+          <h3>Smart pagination</h3>
+          <p>Detects how many list pages exist and stops when results end — no hardcoded caps.</p>
+        </article>
+        <article>
+          <h3>Clean extraction</h3>
+          <p>Noise filters drop UI chrome while keeping code blocks, tables, and real headings.</p>
+        </article>
+        <article>
+          <h3>250+ exports</h3>
+          <p>`Tools/` ships with prior catalog runs — GitHub, Slack, Jira, Notion, Stripe, and more.</p>
+        </article>
+      </section>
+
+      <section class="stack" id="stack">
+        <h2>Stack</h2>
+        <p class="section-lede">Local CLI only — browser automation needs Chrome on your machine.</p>
+        <ul class="stack-grid">
+          <li>Python 3.10+</li>
+          <li>Selenium</li>
+          <li>ChromeDriver</li>
+          <li>python-docx</li>
+        </ul>
+        <pre class="install"><code>git clone https://github.com/Bixal99/Scrapper.git
+cd Scrapper
+python -m venv .venv
+pip install -r requirements.txt
+python scraper.py</code></pre>
+      </section>
+    </main>
+
+    <footer>
+      <p>Scrapper · WithOne.AI · Selenium · Python</p>
+      <a href="https://github.com/Bixal99/Scrapper" target="_blank" rel="noopener">Bixal99/Scrapper</a>
+    </footer>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
