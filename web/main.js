@@ -1,20 +1,29 @@
 const revealEls = document.querySelectorAll(".reveal");
 
+const markInView = (el) => {
+  el.classList.add("in-view");
+};
+
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("in-view");
+        markInView(entry.target);
         observer.unobserve(entry.target);
       }
     });
   },
-  { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+  { threshold: 0.08, rootMargin: "0px 0px -20px 0px" }
 );
 
 revealEls.forEach((el, index) => {
   el.style.transitionDelay = `${Math.min(index * 0.04, 0.24)}s`;
-  observer.observe(el);
+  const rect = el.getBoundingClientRect();
+  if (rect.top < window.innerHeight * 0.92) {
+    markInView(el);
+  } else {
+    observer.observe(el);
+  }
 });
 
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
