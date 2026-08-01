@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Scrapper — WithOne.AI Knowledge Scraper</title>
+    <title>Scrapper | WithOne.AI Knowledge Scraper</title>
     <meta
       name="description"
       content="Universal platform action scraper for the WithOne.AI knowledge base. Selenium crawl, clean Word exports."
@@ -11,96 +11,281 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="grain" aria-hidden="true"></div>
+    <div class="atmosphere" aria-hidden="true">
+      <div class="blob blob-a"></div>
+      <div class="blob blob-b"></div>
+      <div class="grid-wash"></div>
+    </div>
 
-    <header class="hero">
-      <nav class="nav">
-        <a class="brand" href="#top">Scrapper</a>
-        <div class="nav-links">
-          <a href="#flow">Flow</a>
-          <a href="#stack">Stack</a>
-          <a href="https://github.com/Bixal99/Scrapper" target="_blank" rel="noopener">GitHub</a>
-        </div>
+    <header class="site-header">
+      <a class="logo" href="#top">Scrapper</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#pipeline">Pipeline</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#exports">Exports</a>
+        <a href="#setup">Setup</a>
+        <a class="nav-github" href="https://github.com/Bixal99/Scrapper" target="_blank" rel="noopener"
+          >GitHub</a
+        >
       </nav>
+    </header>
 
-      <div class="hero-copy" id="top">
-        <p class="eyebrow">WithOne.AI · Knowledge Base</p>
+    <section class="hero" id="top">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">WithOne.AI knowledge base</p>
         <h1>Scrapper</h1>
         <p class="lede">
-          Paginated crawl, action detail extraction, and Word export —
-          one local Python script for every platform catalog.
+          Paginated crawl, action detail extraction, and Word export in one local Python script for every platform catalog.
         </p>
         <div class="cta-row">
           <a class="btn primary" href="https://github.com/Bixal99/Scrapper" target="_blank" rel="noopener"
             >View on GitHub</a
           >
-          <a class="btn ghost" href="https://github.com/Bixal99/Scrapper#first-time-setup" target="_blank" rel="noopener"
-            >Setup guide</a
-          >
+          <a class="btn ghost" href="#setup">Setup guide</a>
         </div>
       </div>
 
-      <div class="hero-visual" aria-hidden="true">
-        <div class="orbit">
-          <span class="chip c1">GET</span>
-          <span class="chip c2">POST</span>
-          <span class="chip c3">PUT</span>
-          <span class="chip c4">DELETE</span>
-        </div>
-        <pre class="terminal"><code>$ python scraper.py
+      <div class="hero-stage reveal" aria-hidden="true">
+        <div class="doc-shell">
+          <div class="doc-chrome">
+            <span></span><span></span><span></span>
+            <p>Tools / github-tools.docx</p>
+          </div>
+          <div class="doc-body">
+            <p class="doc-kicker">GitHub actions catalog</p>
+            <h2 class="doc-title">248 actions extracted</h2>
+            <div class="doc-row">
+              <span class="method get">GET</span>
+              <code>/repos/{owner}/{repo}/issues</code>
+            </div>
+            <div class="doc-row">
+              <span class="method post">POST</span>
+              <code>/repos/{owner}/{repo}/pulls</code>
+            </div>
+            <div class="doc-row">
+              <span class="method put">PUT</span>
+              <code>/user/starred/{owner}/{repo}</code>
+            </div>
+            <div class="doc-row">
+              <span class="method del">DELETE</span>
+              <code>/repos/{owner}/{repo}/git/refs/{ref}</code>
+            </div>
+            <pre class="run-log"><code>$ python scraper.py
 Opening GitHub knowledge page...
 Detected 12 pages
-[OK] 248 actions → Tools/github-tools.docx</code></pre>
+[OK] 248 actions saved</code></pre>
+          </div>
+        </div>
       </div>
-    </header>
+    </section>
 
     <main>
-      <section class="strip" id="flow">
-        <h2>Core flow</h2>
-        <p class="section-lede">From knowledge page to formatted `.docx` — no polling, no manual copy.</p>
-        <ol class="steps">
-          <li><strong>Open</strong> the platform knowledge URL</li>
-          <li><strong>Walk</strong> every paginated action list</li>
-          <li><strong>Extract</strong> methods, endpoints, params &amp; samples</li>
-          <li><strong>Write</strong> `Tools/{platform}-tools.docx`</li>
+      <section class="band proof reveal" aria-label="Highlights">
+        <div>
+          <strong>250+</strong>
+          <span>Word exports already in Tools/</span>
+        </div>
+        <div>
+          <strong>Auto pages</strong>
+          <span>Pagination detected per catalog</span>
+        </div>
+        <div>
+          <strong>Local CLI</strong>
+          <span>Chrome + Selenium on your machine</span>
+        </div>
+        <div>
+          <strong>Clean docs</strong>
+          <span>Headings, tables, code preserved</span>
+        </div>
+      </section>
+
+      <section class="section" id="pipeline">
+        <div class="section-head reveal">
+          <p class="eyebrow">How it works</p>
+          <h2>From knowledge page to formatted document</h2>
+          <p class="section-lede">
+            Scrapper opens a WithOne.AI catalog, walks every list page, opens each action, then writes a structured Word file.
+          </p>
+        </div>
+
+        <ol class="pipeline reveal">
+          <li>
+            <span class="step-num">01</span>
+            <div>
+              <h3>Open the catalog</h3>
+              <p>Load <code>withone.ai/knowledge/{platform}</code> in Chrome and wait for the action list.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">02</span>
+            <div>
+              <h3>Walk pagination</h3>
+              <p>Detect total pages from the UI, advance through results, and stop when the list ends.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">03</span>
+            <div>
+              <h3>Extract action detail</h3>
+              <p>Capture titles, HTTP methods, endpoints, parameters, tables, and code samples.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">04</span>
+            <div>
+              <h3>Write the Word export</h3>
+              <p>Save to <code>Tools/{platform}-tools.docx</code> with headings, lists, monospace code, and tables.</p>
+            </div>
+          </li>
         </ol>
       </section>
 
-      <section class="features">
-        <article>
-          <h3>Smart pagination</h3>
-          <p>Detects how many list pages exist and stops when results end — no hardcoded caps.</p>
-        </article>
-        <article>
-          <h3>Clean extraction</h3>
-          <p>Noise filters drop UI chrome while keeping code blocks, tables, and real headings.</p>
-        </article>
-        <article>
-          <h3>250+ exports</h3>
-          <p>`Tools/` ships with prior catalog runs — GitHub, Slack, Jira, Notion, Stripe, and more.</p>
-        </article>
+      <section class="section capabilities" id="capabilities">
+        <div class="section-head reveal">
+          <p class="eyebrow">Capabilities</p>
+          <h2>Built for noisy knowledge pages</h2>
+          <p class="section-lede">
+            Heading heuristics, noise filters, and table detection keep exports readable without hand cleanup.
+          </p>
+        </div>
+
+        <div class="capability-grid reveal">
+          <article>
+            <h3>Smart pagination</h3>
+            <p>
+              Infers how many list pages exist for a platform and walks them until results stop. No hardcoded page caps.
+            </p>
+          </article>
+          <article>
+            <h3>Method aware extraction</h3>
+            <p>
+              Keeps GET, POST, PUT, PATCH, and DELETE visible next to endpoints so catalogs stay scannable in Word.
+            </p>
+          </article>
+          <article>
+            <h3>Content hygiene</h3>
+            <p>
+              Strips nav chrome, suggest-edit prompts, and copy-code UI while preserving real code blocks and language tags.
+            </p>
+          </article>
+          <article>
+            <h3>Heading heuristics</h3>
+            <p>
+              Promotes short Title Case lines only when followed by substantive content. Code-like prefixes never become headings.
+            </p>
+          </article>
+          <article>
+            <h3>Table rendering</h3>
+            <p>
+              Detects pipe, tab, and multi-space columns, then writes them as Word tables with bold header rows.
+            </p>
+          </article>
+          <article>
+            <h3>Stable navigation</h3>
+            <p>
+              Uses direct URLs between list and detail pages instead of browser back, avoiding stale document state.
+            </p>
+          </article>
+        </div>
       </section>
 
-      <section class="stack" id="stack">
-        <h2>Stack</h2>
-        <p class="section-lede">Local CLI only — browser automation needs Chrome on your machine.</p>
-        <ul class="stack-grid">
-          <li>Python 3.10+</li>
-          <li>Selenium</li>
-          <li>ChromeDriver</li>
-          <li>python-docx</li>
-        </ul>
-        <pre class="install"><code>git clone https://github.com/Bixal99/Scrapper.git
+      <section class="section exports" id="exports">
+        <div class="section-head reveal">
+          <p class="eyebrow">Catalog coverage</p>
+          <h2>Hundreds of platform exports ready</h2>
+          <p class="section-lede">
+            Point <code>PlatformScraper</code> at any WithOne.AI knowledge slug. The Tools folder already holds prior runs.
+          </p>
+        </div>
+
+        <div class="export-layout reveal">
+          <div class="export-groups">
+            <div>
+              <h3>Development</h3>
+              <p>GitHub, GitLab, Linear, Jira, Trello, Asana, Monday, Confluence</p>
+            </div>
+            <div>
+              <h3>Communication</h3>
+              <p>Slack, Discord, Intercom, Zoom, Google Meet</p>
+            </div>
+            <div>
+              <h3>Productivity</h3>
+              <p>Notion, Google Drive, Google Docs, Figma, Loom</p>
+            </div>
+            <div>
+              <h3>Business</h3>
+              <p>HubSpot, Salesforce, Zendesk, Datadog, PagerDuty, Stripe</p>
+            </div>
+          </div>
+          <aside class="export-aside">
+            <p class="aside-label">Output shape</p>
+            <ul>
+              <li>Platform title and action count</li>
+              <li>Source knowledge URL</li>
+              <li>Numbered actions with methods</li>
+              <li>Endpoints, params, samples</li>
+              <li>Tables rendered in Word</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section setup" id="setup">
+        <div class="section-head reveal">
+          <p class="eyebrow">Local setup</p>
+          <h2>Running in minutes</h2>
+          <p class="section-lede">
+            Requires Python 3.10+, Google Chrome, and the packages in requirements.txt. No API keys needed for public pages.
+          </p>
+        </div>
+
+        <div class="setup-grid reveal">
+          <div class="setup-steps">
+            <div>
+              <span>1</span>
+              <p>Clone the repo and create a virtualenv</p>
+            </div>
+            <div>
+              <span>2</span>
+              <p>Install dependencies from requirements.txt</p>
+            </div>
+            <div>
+              <span>3</span>
+              <p>Run <code>python scraper.py</code> (optional <code>--max-pages</code> / <code>--max-actions</code>)</p>
+            </div>
+          </div>
+          <pre class="install"><code>git clone https://github.com/Bixal99/Scrapper.git
 cd Scrapper
 python -m venv .venv
+# Windows: .venv\Scripts\activate
+# macOS/Linux: source .venv/bin/activate
 pip install -r requirements.txt
 python scraper.py</code></pre>
+        </div>
+
+        <div class="stack-row reveal" id="stack">
+          <h3>Stack</h3>
+          <ul>
+            <li>Python 3.10+</li>
+            <li>Selenium</li>
+            <li>ChromeDriver</li>
+            <li>python-docx</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="closing reveal">
+        <h2>Scrape the catalog. Keep the document.</h2>
+        <p>Open source on GitHub. Landing page on Vercel. Browser automation stays local.</p>
+        <a class="btn primary" href="https://github.com/Bixal99/Scrapper" target="_blank" rel="noopener"
+          >Open repository</a
+        >
       </section>
     </main>
 
