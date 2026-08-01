@@ -272,7 +272,7 @@ flowchart LR
 
 Scrapper is a **local CLI tool**. Heading detection only promotes short Title Case / ALL CAPS lines followed by substantive content; code-like prefixes and sentence-ending punctuation are never treated as headings. Navigation uses direct URLs (not `driver.back()`) to avoid stale pages.
 
-The [Vercel site](https://github.com/Bixal99/Scrapper) hosts the project landing page only — browser automation must run on your machine (Chrome + Selenium).
+Live landing page: **[helpscript.vercel.app](https://helpscript.vercel.app)** — documentation only. Browser automation must run on your machine (Chrome + Selenium).
 
 ---
 
